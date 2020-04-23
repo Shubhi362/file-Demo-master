@@ -1,0 +1,17 @@
+directories:
+  output: dist
+  buildResources: build
+appId: io.ionic.file-Demo
+files:
+  - filter:
+      - '!electron-builder.env'
+forceCodeSigning: false
+win:
+  target:
+    target: nsis
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  menuCategory: Electron Apps
+electronVersion: 8.2.3

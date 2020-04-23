@@ -139,6 +139,8 @@ removeImage() {
 
 allFiles:[{name:string,path:string}]=[{name:"",path:""}];
 getAllFIles(){
+  
+  this.allFiles=[{name:"",path:""}];
   debugger;
   this.clicked=true;
   this.storage.forEach((path,name)=>{
@@ -165,12 +167,16 @@ async showImage(obj){
   let contents = await Filesystem.readFile({
     path: 'secrets/'+obj.name,
     directory: FilesystemDirectory.Documents,
-    encoding: FilesystemEncoding.UTF8
+    
     // encoding: FilesystemEncoding.UTF8
-  });
-  debugger;
-  this.singleImageBase64[obj.name]=contents.data;
-  // 'data:image/jpeg;base64,'+
-}
+  }).then(res=>{
 
+    this.singleImageBase64[obj.name]='data:image/jpeg;base64,'+res.data;
+   // 'data:image/jpeg;base64,'+res.data;
+   
+
+  });
+  
+  
+}
 }

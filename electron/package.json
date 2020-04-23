@@ -3,20 +3,42 @@
   "version": "1.0.0",
   "description": "An Amazing Capacitor App",
   "main": "index.js",
+  "build": {
+    "appId": "io.ionic.file-Demo",
+    "files": [
+      "!electron-builder.env"
+    ],
+    "forceCodeSigning": false,
+    "win": {
+      "target": {
+        "target": "nsis"
+      }
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "menuCategory": "Electron Apps"
+    }
+  },
   "scripts": {
-    "electron:start": "electron ./"
+    "electron:start": "electron ./",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "dependencies": {
     "@capacitor/electron": "^2.0.1",
     "electron-is-dev": "^1.1.0"
   },
   "devDependencies": {
-    "electron": "^8.0.0"
+    "electron": "^8.0.0",
+    "electron-builder": "^22.5.1"
   },
   "keywords": [
     "capacitor",
     "electron"
   ],
-  "author": "",
+  "author": "Umesh Dubal",
   "license": "ISC"
 }
