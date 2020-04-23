@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.fileDemo",
+  "appName": "file-Demo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
